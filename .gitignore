@@ -1,0 +1,5 @@
+# temporary dir
+tmp/
+
+# Mac OS generated files
+.DS_Store
