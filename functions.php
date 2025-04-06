@@ -2,6 +2,7 @@
 // Add a composer packages path
 include_once 'vendor/autoload.php';
 use simplehtmldom\HtmlDocument;
+$Parser = new HtmlDocument();
 
 // Custom functions write with "_" at the beginning of the name to separate from other functions
 // Display data in the var
