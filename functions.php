@@ -1,4 +1,6 @@
 <?php
+// Add a composer packages path
+include_once 'vendor/autoload.php';
 
 // Custom functions write with "_" at the beginning of the name to separate from other functions
 // Display data in the var

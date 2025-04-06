@@ -1,0 +1,13 @@
+{
+    "name": "feliks/udh-pl-wp-theme",
+    "authors": [
+        {
+            "name": "Feliks N",
+            "email": "feliks.nvk@gmail.com"
+        }
+    ],
+    "require": {
+        "simplehtmldom/simplehtmldom": "^2.0@RC"
+    },
+    "minimum-stability": "RC"
+}
