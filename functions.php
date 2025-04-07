@@ -18,8 +18,6 @@ add_theme_support('title-tag');
 
 // Add post thumbnails support to the theme
 add_theme_support('post-thumbnails');
-//set_post_thumbnail_size(250, 150);
-//add_image_size('big-thumb', 400, 400, true);
 
 // Change a class for a nav item
 add_filter( 'nav_menu_css_class', 'change_menu_item_css_classes', 10, 1 );
