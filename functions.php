@@ -61,6 +61,7 @@ add_filter('pings_open', '__return_false', 20, 2);
 // Remove comments page in menu
 add_action('admin_menu', function () {
    remove_menu_page('edit-comments.php');
+   remove_menu_page('edit.php');
 });
 
 // Disable support for comments and trackbacks in post types
