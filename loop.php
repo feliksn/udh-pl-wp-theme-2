@@ -1,7 +1,7 @@
 <div class="row row-cols-4">
-	<?php if ( have_posts() ) { ?>
-		<?php while ( have_posts() ) { ?>
-			<?php the_post(); ?>
+	<?php if ( $args->have_posts() ) { ?>
+		<?php while ( $args->have_posts() ) { ?>
+			<?php $args->the_post(); ?>
 			
 			<?php
 				$parsed_content = PARSER->load( get_the_content() );
@@ -34,4 +34,5 @@
 	<?php } else { ?>
 		<p>Wpisów nie odnaleziono!</p>;
 	<?php } ?>
+	<?php wp_reset_postdata(); ?>
 </div>
