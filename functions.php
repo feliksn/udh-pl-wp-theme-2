@@ -99,10 +99,10 @@ function disable_comments_admin_menu_redirect() {
    }
 }
 
-// CUSTOM POST TYPES
-// Add a new post type (brand)
+// Register custom post types
 add_action( 'init', 'register_post_types' );
 function register_post_types(){
+	// brand
 	register_post_type( 'brand', [
 		'label'  => null,
 		'labels' => [
@@ -124,15 +124,40 @@ function register_post_types(){
 		'show_in_rest'        => true,
 		'menu_position'       => 5,
 		'menu_icon'           => null,
-		//'capability_type'   => 'post',
-		//'capabilities'      => 'post',
 		'hierarchical'        => true,
 		'supports'            => array('title', 'editor', 'page-attributes'),
 		'taxonomies'          => [ 'category' ],
 		'has_archive'         => false,
 		'rewrite'             => true,
 	] );
-
+	// product
+	register_post_type( 'product', [
+		'label'  => null,
+		'labels' => [
+			'name'               => 'Produkty',
+			'singular_name'      => 'Produkt',
+			'add_new'            => 'Dodaj produkt',
+			'add_new_item'       => 'Dodaj produkt',
+			'edit_item'          => 'Edytuj produkt',
+			'new_item'           => 'Nowy produkt',
+			'view_item'          => 'Oglądaj produkt',
+			'search_items'       => 'Szukaj produkt',
+			'not_found'          => 'Nie znaleziono',
+			'not_found_in_trash' => 'Nie znaleziono w koszu',
+			'menu_name'          => 'Produkt',
+		],
+		'public'              => true,
+		'show_in_menu'        => true,
+		'show_in_admin_bar'   => false,
+		'show_in_rest'        => true,
+		'menu_position'       => 6,
+		'menu_icon'           => null,
+		'hierarchical'        => false,
+		'supports'            => array('title', 'editor', 'page-attributes'),
+		'taxonomies'          => [ 'category' ],
+		'has_archive'         => false,
+		'rewrite'             => true,
+	] );
 }
 
 
