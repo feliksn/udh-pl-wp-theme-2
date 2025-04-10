@@ -1,4 +1,4 @@
-<div class="row row-cols-4">
+<div class="row row-cols-4 g-0">
 	<?php if ( $args->have_posts() ) { ?>
 		<?php while ( $args->have_posts() ) { ?>
 			<?php $args->the_post(); ?>
