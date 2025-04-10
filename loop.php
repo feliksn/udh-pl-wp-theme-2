@@ -33,7 +33,7 @@
 
 		<?php } ?>
 	<?php } else { ?>
-		<p>Wpisów nie odnaleziono!</p>;
+		<p>Wpisów nie odnaleziono!</p>
 	<?php } ?>
 	<?php wp_reset_postdata(); ?>
 </div>
