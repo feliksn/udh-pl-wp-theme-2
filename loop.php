@@ -15,6 +15,7 @@
 					$post_img_id  = str_replace('wp-image-', '', $post_img->class);
 					$post_img_url = wp_get_attachment_image_url($post_img_id, 'medium');
 				}
+				$description = $parsed_content->getElementById("#brand_description");
 			?>
 			
 			<!-- Post in the loop -->
@@ -26,7 +27,7 @@
 					<a class="d-block mb-3" href="<?php the_permalink(); ?>">
 						<img src="<?php echo $logo_img_url ?>" alt="">
 					</a>
-					<?php the_excerpt(); ?>
+					<?php echo $description; ?>
 				</div>
 			</div>
 
