@@ -20,7 +20,7 @@
 			<!-- Post in the loop -->
 			<div id="post-<?php the_ID(); ?>" <?php post_class('col'); ?>>
 				<a href="<?php the_permalink(); ?>">
-					<img class="img-fluid" src="<?php echo $post_img_url ?>" alt="">
+					<img class="w-100" src="<?php echo $post_img_url ?>" alt="">
 				</a>
 				<div class="p-3">
 					<a class="d-block mb-3" href="<?php the_permalink(); ?>">
