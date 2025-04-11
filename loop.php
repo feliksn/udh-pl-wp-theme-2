@@ -1,3 +1,8 @@
+<?php
+	$post_type = $args;
+	$posts = get_posts('post_type='. $post_type);
+?>
+
 <div class="row row-cols-4 g-0">
 	<?php if ( $args->have_posts() ) { ?>
 		<?php while ( $args->have_posts() ) { ?>
