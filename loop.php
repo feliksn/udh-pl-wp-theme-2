@@ -4,10 +4,9 @@
 ?>
 
 <div class="row row-cols-4 g-0">
-	<?php if ( $args->have_posts() ) { ?>
-		<?php while ( $args->have_posts() ) { ?>
-			<?php $args->the_post(); ?>
-			
+	<?php if ( count( $posts ) > 0 ) { ?>
+		<?php foreach ( $posts as $post ) { ?>
+			<?php setup_postdata( $post ); ?>
 			<?php
 				$parsed_content = PARSER->load( get_the_content() );
 				$tbody_rows = $parsed_content->find('#brand_images tbody tr');
