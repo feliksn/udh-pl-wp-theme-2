@@ -155,7 +155,7 @@ function register_post_types(){
 		'hierarchical'        => false,
 		'supports'            => array('title', 'editor', 'page-attributes'),
 		'taxonomies'          => [ 'category' ],
-		'has_archive'         => false,
+		'has_archive'         => true,
 		'rewrite'             => true,
 	] );
 }
