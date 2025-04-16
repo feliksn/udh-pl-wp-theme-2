@@ -37,5 +37,5 @@
 		<h4>Wpisów nie odnaleziono!</h4>
 	
 	<?php } ?>
-	<?php wp_reset_postdata(); ?>
+	<?php if( isset( $query ) ) wp_reset_postdata(); ?>
 </div>
