@@ -10,6 +10,10 @@ function _raw( $var ){
     echo "<pre>" . print_r( $var, true ) . "</pre>";
 }
 
+// Get a parsed content from WP function
+function getParsedContent(){
+	return PARSER->load( get_the_content() );
+}
 // Add a menu in an admin panel
 add_theme_support("menus");
 
