@@ -45,6 +45,33 @@ function getBrand(){
 	return $brand;
 }
 
+// Get product data from a parsed content using a product wp pattern
+function getProduct(){
+	$categories 			= getCategories();
+	$product['category'] 	= $categories['category'];
+	$product['subcategory'] = $categories['subcategory'];
+	$parsedContent 			= getParsedContent();
+	$product['description'] = $parsedContent->find( "#product_description", 0 )->outertext; 
+	$product_contents 		= $parsedContent->find( '#product_contents tbody tr', 0 );
+	$product['content_1'] 	= $product_contents->find( 'td', 0 );
+	$product['content_2'] 	= $product_contents->find( 'td', 1 );
+	$product_volumes 		= $parsedContent->find( '#product_volumes tbody tr' );
+	foreach( $product_volumes as $product_volume ){
+		$product['volumes'][] = [
+			'single_image_url'  => getImageUrlFromTd( $product_volume, 0, 'medium_large' ),
+			'image_type'        => $product_volume->find( 'td', 1 ),
+			'pack_image_url'    => getImageUrlFromTd( $product_volume, 2, 'medium' ),
+			'pallete_image_url' => getImageUrlFromTd( $product_volume, 3, 'medium' ),
+			'shape_type'        => $product_volume->find( 'td', 4 ),
+			'volume_val'        => $product_volume->find( 'td', 5 ),
+			'pcs_in_pack'       => $product_volume->find( 'td', 6 ),
+			'pcs_on_pallete'    => $product_volume->find( 'td', 7 ),
+			'thubmnail_height'  => $product_volume->find( 'td', 8 )
+		];	
+	}
+	return $product;
+}
+
 // Add a menu in an admin panel
 add_theme_support("menus");
 
