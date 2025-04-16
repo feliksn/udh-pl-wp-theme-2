@@ -1,7 +1,4 @@
-<?php
-	$post_type = $args;
-	$posts = get_posts('post_type='. $post_type);
-?>
+<?php if( $args ) $query = new WP_Query( $args ) ?>
 
 <div class="row row-cols-4 g-0">
 	<?php if ( count( $posts ) > 0 ) { ?>
