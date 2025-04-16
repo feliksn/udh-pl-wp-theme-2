@@ -5,6 +5,9 @@
 		<?php while ( isset( $query ) && $query->have_posts() || have_posts() ) { ?>
 			<?php isset( $query ) ? $query->the_post() : the_post(); ?>
 			
+			<!-- getPost() checks which current post type is in the loop -->
+			<!-- Don't use $post!!! It is a global var. It could cause an error; -->
+			<?php $_post = getPost(); ?>
 			
 			<!-- Post in the loop -->
 			<div id="post-<?php the_ID(); ?>" <?php post_class('col'); ?>>
