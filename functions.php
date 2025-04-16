@@ -72,6 +72,13 @@ function getProduct(){
 	return $product;
 }
 
+// Get post data by post type
+function getPost(){
+	$post_type = get_post_type();
+	if( $post_type == 'brand' ) return getBrand();
+	if( $post_type == 'product' ) return getProduct();
+}
+
 // Add a menu in an admin panel
 add_theme_support("menus");
 
