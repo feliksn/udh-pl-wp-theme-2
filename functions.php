@@ -69,6 +69,7 @@ function getProduct(){
 			'thubmnail_height'  => $product_volume->find( 'td', 8 )
 		];	
 	}
+	$product['image_url'] = $product['volumes'][0]['single_image_url'];
 	return $product;
 }
 
