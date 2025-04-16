@@ -4,9 +4,8 @@ include_once 'vendor/autoload.php';
 use simplehtmldom\HtmlDocument;
 const PARSER = new HtmlDocument();
 
-// Custom functions write with "_" at the beginning of the name to separate from other functions
 // Display data in the var
-function _raw( $var ){
+function showVarData( $var ){
     echo "<pre>" . print_r( $var, true ) . "</pre>";
 }
 
@@ -196,7 +195,7 @@ function register_post_types(){
 		'menu_icon'           => null,
 		'hierarchical'        => true,
 		'supports'            => array('title', 'editor', 'page-attributes'),
-		'taxonomies'          => [ 'category' ],
+		'taxonomies'          => [ 'post_tag' ],
 		'has_archive'         => false,
 		'rewrite'             => true,
 	] );
@@ -224,7 +223,7 @@ function register_post_types(){
 		'menu_icon'           => null,
 		'hierarchical'        => false,
 		'supports'            => array('title', 'editor', 'page-attributes'),
-		'taxonomies'          => [ 'category' ],
+		'taxonomies'          => [ 'category', 'post_tag' ],
 		'has_archive'         => true,
 		'rewrite'             => true,
 	] );
