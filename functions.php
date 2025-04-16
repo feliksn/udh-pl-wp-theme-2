@@ -34,6 +34,17 @@ function getImageUrlFromTd( $tr, $td_index, $size='thumbnail' ){
 	}
 }
 
+// Get brand data from a parsed content using a brand wp pattern
+function getBrand(){
+	$parsedContent		= getParsedContent();
+	$brand['description']= $parsedContent->find( "#brand_description", 0 )->outertext;
+	$brand_images		= $parsedContent->find( '#brand_images tbody tr', 0 );
+	$brand['logo_url']  = getImageUrlFromTd( $brand_images, 0 );
+	$brand['image_url'] = getImageUrlFromTd( $brand_images, 1, 'medium' );
+	$brand['cover_url'] = getImageUrlFromTd( $brand_images, 2, 'full' );
+	return $brand;
+}
+
 // Add a menu in an admin panel
 add_theme_support("menus");
 
