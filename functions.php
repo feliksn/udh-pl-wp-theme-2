@@ -24,6 +24,16 @@ function getCategories(){
 	return $categories;
 }
 
+// Get an image url from parsed html <table> in a <tr> tag
+function getImageUrlFromTd( $tr, $td_index, $size='thumbnail' ){
+	$img = $tr->find( 'td', $td_index )->find( 'img', 0 );
+	if($img){
+		$img_id  = str_replace( 'wp-image-', '', $img->class );
+		$img_url = wp_get_attachment_image_url( $img_id, $size );
+		return $img_url;
+	}
+}
+
 // Add a menu in an admin panel
 add_theme_support("menus");
 
