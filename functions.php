@@ -14,6 +14,16 @@ function _raw( $var ){
 function getParsedContent(){
 	return PARSER->load( get_the_content() );
 }
+
+// Get a category an a subcategory from a product
+function getCategories(){
+	foreach( get_the_category() as $category){
+		if( $category->parent == 0) $categories['category'] = $category;			
+		else						$categories['subcategory'] = $category;
+	}
+	return $categories;
+}
+
 // Add a menu in an admin panel
 add_theme_support("menus");
 
